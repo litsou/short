@@ -64,7 +64,7 @@ export async function onRequestPost(context) {
 
             // slug 已存在
             if (existUrl) {
-                return Response.json({ message: 'Slug already exists.' })
+                return Response.json({ message: 'Slug 已經有了' })
             }
         }
 
@@ -78,7 +78,7 @@ export async function onRequestPost(context) {
         const bodyUrl = new URL(url);
 
         if (bodyUrl.hostname === originurl.hostname) {
-            return Response.json({ message: 'You cannot shorten a link to the same domain.' }, {
+            return Response.json({ message: '您不能縮短指向同一網域的鏈接' }, {
                 status: 400
             })
         }
